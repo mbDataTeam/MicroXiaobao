@@ -30,56 +30,57 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
+  .state('home', {
+    url: '/home',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'views/home.html'
   })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
+  .state('login', {
+    url: '/login',
+    templateUrl: 'views/login.html'
   })
-
-  .state('tab.chats', {
-      url: '/chats',
+    .state('home.default', {
+      url: '/default',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'mainContent': {
+          templateUrl: 'views/flow/default.html'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+  .state('home.flow', {
+    url: '/flow',
+    views: {
+      'mainContent': {
+        templateUrl: 'views/flow/flow.html'
+      }
+    }
+  })
+  .state('home.myShop', {
+      url: '/myShop',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'mainContent': {
+          templateUrl: 'views/myShop/myShop.html'
         }
       }
     })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+  .state('receipt', {
+      url: '/receipt',
+      views: {
+        'mainContent': {
+          templateUrl: 'views/receipt/receipt.html'
+        }
       }
-    }
-  });
+    })
+  .state('verify', {
+      url: '/verify',
+      views: {
+        'mainContent': {
+          templateUrl: 'views/verify/verify.html'
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/home/default');
 
 });
