@@ -43,19 +43,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/default',
       views: {
         'mainContent': {
-          templateUrl: 'views/flow/default.html'
+          templateUrl: 'views/default/default.html'
         }
       }
     })
-  .state('home.flow', {
-    url: '/flow',
-    views: {
-      'mainContent': {
-        templateUrl: 'views/flow/flow.html'
-      }
-    }
-  })
-  .state('home.myShop', {
+   .state('home.myShop', {
       url: '/myShop',
       views: {
         'mainContent': {
@@ -63,7 +55,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  .state('receipt', {
+    .state('home.flow', {
+      url: '/flow',
+      views: {
+        'mainContent': {
+          templateUrl: 'views/flow/flow.html'
+        }
+      }
+    })
+  .state('home.receipt', {
       url: '/receipt',
       views: {
         'mainContent': {
@@ -71,7 +71,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  .state('verify', {
+  .state('home.verify', {
       url: '/verify',
       views: {
         'mainContent': {
